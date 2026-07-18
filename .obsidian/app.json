@@ -1,0 +1,13 @@
+{
+  "livePreview": true,
+  "promptDelete": false,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "assets",
+  "obsidian-local-rest-api": {
+    "port": 38080
+  },
+  "templater-obsidian": {
+    "templatesFolder": "Templates",
+    "dateFormat": "YYYY-MM-DD"
+  }
+}

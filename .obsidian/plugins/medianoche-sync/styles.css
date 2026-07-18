@@ -1,0 +1,155 @@
+/**
+ * Medianoche Sync - Styles
+ */
+
+/* ============================================================
+   Action Bar (Reading View)
+   ============================================================ */
+
+.medianoche-action-bar {
+	display: flex;
+	gap: 8px;
+	padding: 16px 0;
+	margin-top: 24px;
+	border-top: 1px solid var(--background-modifier-border);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+body.medianoche-hide-reading-action-bar .medianoche-action-bar {
+	display: none;
+}
+
+.medianoche-action-button {
+	padding: 10px 20px;
+	border-radius: 8px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-size: 14px;
+	transition: all 0.15s ease;
+	min-width: 100px;
+	min-height: 44px;
+}
+
+.medianoche-action-button:hover {
+	background: var(--background-modifier-hover);
+}
+
+.medianoche-action-button:active {
+	transform: scale(0.98);
+}
+
+.medianoche-action-button:disabled {
+	cursor: default;
+	opacity: 0.6;
+}
+
+/* Starred */
+.medianoche-action-button.starred {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+/* Archived */
+.medianoche-action-button.archived {
+	background: var(--background-modifier-success);
+	color: var(--text-on-accent);
+	opacity: 0.8;
+}
+
+/* Delete */
+.medianoche-action-button.delete {
+	color: var(--text-error);
+}
+
+.medianoche-action-button.delete:hover {
+	background: var(--background-modifier-error-hover);
+}
+
+/* Deleted */
+.medianoche-action-button.delete.deleted {
+	background: var(--text-error);
+	color: var(--text-on-accent);
+	border-color: var(--text-error);
+}
+
+/* ============================================================
+   Header Actions (Live Preview / Source)
+   ============================================================ */
+
+/* Starred */
+.view-action.medianoche-starred,
+.clickable-icon.medianoche-starred {
+	color: var(--text-warning);
+}
+.view-action.medianoche-starred svg,
+.clickable-icon.medianoche-starred svg {
+	fill: var(--text-warning);
+	stroke: var(--text-warning);
+}
+
+/* Archived */
+.view-action.medianoche-archived,
+.clickable-icon.medianoche-archived {
+	color: var(--text-success);
+}
+.view-action.medianoche-archived svg,
+.clickable-icon.medianoche-archived svg {
+	fill: var(--text-success);
+	stroke: var(--text-success);
+}
+
+/* Deleted */
+.view-action.medianoche-deleted,
+.clickable-icon.medianoche-deleted {
+	color: var(--text-error);
+}
+.view-action.medianoche-deleted svg,
+.clickable-icon.medianoche-deleted svg {
+	fill: var(--text-error);
+	stroke: var(--text-error);
+}
+
+/* ============================================================
+   Confirm Delete Modal
+   ============================================================ */
+
+.medianoche-modal-buttons {
+	display: flex;
+	gap: 12px;
+	justify-content: flex-end;
+	margin-top: 20px;
+}
+
+.medianoche-modal-buttons button {
+	padding: 8px 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	min-width: 80px;
+}
+
+.medianoche-modal-buttons button.mod-warning {
+	background: var(--text-error);
+	color: var(--text-on-accent);
+	border: none;
+}
+
+/* ============================================================
+   Mobile Optimizations
+   ============================================================ */
+
+@media (max-width: 600px) {
+	.medianoche-action-bar {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.medianoche-action-button {
+		width: 100%;
+		padding: 14px 20px;
+		font-size: 16px;
+	}
+}
