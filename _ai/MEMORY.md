@@ -212,3 +212,7 @@
 ### Git 同步
 - 已配置 git 全局代理: `http://127.0.0.1:7897`（走 Clash Verge）
 - 脚本自动 add → commit → pull --rebase → push
+
+> **Heartbeat 自动归档 (2026-07-26 14:32)**：处理了 2 个文件
+> - 2026-07-26-Windows Codex++ 端口占用解决.md
+> - 2026-07-26-最终架构-codex-relay+relay-ai分工.md
