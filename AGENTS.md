@@ -10,8 +10,14 @@ If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out w
 
 Use runtime-provided startup context first. It may already include `AGENTS.md`, `SOUL.md`, `USER.md`, recent daily memory (`memory/YYYY-MM-DD.md`), and `MEMORY.md` (main session only).
 
-Do not manually reread startup files unless:
+However, as per the 2026-07-25 cross-agent rule, **all AI agents must also proactively read:**
+- **`_ai/MEMORY.md`** — global rules and constraints (mandatory)
+- **`_ai/README.md`** — vault structure overview
+- **Recent daily note** (`memory/YYYY-MM-DD.md`) — latest context
 
+Do not skip these reads. They are the shared memory across all agents.
+
+Do not manually reread other startup files unless:
 1. The user explicitly asks
 2. The provided context is missing something you need
 3. You need a deeper follow-up read beyond the provided startup context

@@ -2,11 +2,11 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+- **Name:** 王东
+- **What to call them:** 东哥 / 王东
+- **Pronouns:**
+- **Timezone:** Asia/Shanghai (UTC+8)
+- **Notes:** Obsidian 重度用户，住在 vault 里
 
 ## Context
 
