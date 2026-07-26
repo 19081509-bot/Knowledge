@@ -134,11 +134,14 @@ def update_memory_summary(processed: list):
     log(f"已更新 MEMORY.md 摘要")
 
 def git_sync():
-    """Git 提交推送"""
+    """Git 提交推送（带 rebase）"""
     import subprocess
     try:
         os.chdir(str(VAULT))
+        # 1. add
         subprocess.run(["git", "add", "-A"], capture_output=True)
+        
+        # 2. commit
         ts = datetime.now().strftime("%Y-%m-%d-%H%M")
         result = subprocess.run(
             ["git", "commit", "-m", f"heartbeat: auto cleanup {ts}"],
@@ -147,8 +150,31 @@ def git_sync():
         if result.returncode == 0:
             log(f"Git commit: {result.stdout.strip()}")
         else:
-            log(f"Git commit: {result.stderr.strip()}")
+            log(f"Git commit (可能无变更): {result.stderr.strip()}")
         
+        # 3. pull --rebase
+        rebase = subprocess.run(
+            ["git", "pull", "--rebase"],
+            capture_output=True, text=True
+        )
+        if rebase.returncode != 0:
+            log(f"Git pull --rebase 失败: {rebase.stderr.strip()}")
+            # 如果有未暂存变更，stash 后重试
+            stash = subprocess.run(["git", "stash"], capture_output=True, text=True)
+            if stash.returncode == 0:
+                log("已 stash 未暂存变更")
+                rebase2 = subprocess.run(["git", "pull", "--rebase"], capture_output=True, text=True)
+                if rebase2.returncode == 0:
+                    log("Git pull --rebase: ✅ (stash 后)")
+                    subprocess.run(["git", "stash", "pop"], capture_output=True, text=True)
+                else:
+                    log(f"Git pull --rebase 仍失败: {rebase2.stderr.strip()}")
+                    subprocess.run(["git", "stash", "drop"], capture_output=True, text=True)
+                    return
+            else:
+                return
+        
+        # 4. push
         push = subprocess.run(["git", "push"], capture_output=True, text=True)
         if push.returncode == 0:
             log("Git push: ✅")

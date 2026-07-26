@@ -188,3 +188,27 @@
 > - 豆包 4.md
 > - 豆包 5.md
 > - 豆包.md
+
+---
+
+## 自动清洗流程（2026-07-26 投入使用）
+
+### 触发方式
+- OpenClaw Heartbeat 每 4 小时触发 → 读取 HEARTBEAT.md → 执行 `heartbeat-cleanup.py`
+
+### 脚本位置
+- `_ai/scripts/heartbeat-cleanup.py` — 扫描 `00_Inbox/` → 清洗 → 分类归档
+- `_ai/scripts/heartbeat-cleanup.log` — 运行日志
+
+### 分类规则
+| 关键词 | 归档目录 |
+|--------|---------|
+| codex-relay / codex_relay / Codex++ | AI对话存档/codex-relay踩坑/ |
+| Clash / clash / mihomo / 代理 / Verge | AI对话存档/Clash Verge配置排错/ |
+| OpenClaw / openclaw / Gateway | AI对话存档/系统调试日志/ |
+| 跨Agent / 记忆持久化 / 全局规则 | AI对话存档/系统调试日志/ |
+| 豆包 / doubao（默认） | AI对话存档/通用技术记录/ |
+
+### Git 同步
+- 已配置 git 全局代理: `http://127.0.0.1:7897`（走 Clash Verge）
+- 脚本自动 add → commit → pull --rebase → push
