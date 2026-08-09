@@ -1,0 +1,31 @@
+# 🛢️ 钻井知识体系索引
+
+> 由 Windows Codex (DeepSeek-v4-flash) 整理
+> 最后更新: 2026-08-09
+
+## 📂 知识文件索引
+
+| # | 文件名 | 内容 | 状态 |
+|---|--------|------|------|
+| 1 | [[_ai/drilling/compass-landmark-basics.md|COMPASS 基础]] | Landmark COMPASS 定向井软件三大模块、设计概念、工作流 | ✅ |
+| 2 | [[_ai/drilling/navigator-drilling-studio.md|Navigator 基础]] | Navigator Drilling Studio 钻井工程软件模块与功能 | ✅ |
+| 3 | [[_ai/drilling/directional-drilling-engineering.md|定向井技术]] | 造斜率/剖面/侧钻/水平井/摩阻管理 | ✅ |
+| 4 | [[_ai/drilling/mwd-survey-tools.md|MWD/测斜仪器]] | 随钻测量、测斜计算、防碰监测、磁偏角 | ✅ |
+| 5 | [[_ai/drilling/drilling-fluids.md|钻井液技术]] | 泥浆功能/体系/性能/携砂/堵漏 | ✅ |
+| 6 | [[_ai/drilling/bha-drilling-tools.md|BHA/钻井工具]] | 钻具组合、螺杆钻具、钻头、屈曲 | ✅ |
+| 7 | [[_ai/drilling/well-control.md|井控技术]] | BOP/试压/地层压力/H₂S防控 | ✅ |
+| 8 | [[_ai/drilling/offshore-drilling.md|海上钻井]] | 平台类型/隔水管/海底BOP/挑战 | ✅ |
+| 9 | [[_ai/drilling/logging-engineering.md|录井工程]] | 地质录井/综合录井/LWD/资料录取 | ✅ |
+
+## 📝 待补充专题
+- WellCAT 套管与热力学设计
+- WellPlan 详细摩阻/扭矩分析
+- StressCheck 井壁稳定性
+- Cementing (固井) 工程
+- 定向井工具面控制实操
+- Compass (Landmark) 实操教程
+
+## 🔗 关联
+- 沈275CH侧钻超短半径水平井施工方案 (本机 Documents)
+- NDSOutput 设计输出 (本机 Documents/NDSOutput)
+- Landmark EDT 文档 (本机 C:\Landmark\EDT)
