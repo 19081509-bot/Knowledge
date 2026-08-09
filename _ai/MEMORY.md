@@ -6,10 +6,67 @@
 ## 运行环境
 
 - **设备**: Mac (192.168.2.67) + Windows (192.168.2.166)
-- **AI 工具栈**: Codex CLI + OpenClaw + Claude Code
-- **Obsidian 侧边 AI**: Claudian（非 OpenClaw）
+- **AI 工具栈**: OpenClaw (虾癫癫) + Codex CLI (虾癫癫) + Codex++ + Claude Code + Claudian + Windows Codex
 - **API 供应商**: 硅基流动（DeepSeek 文本）
 - **知识库**: Obsidian `/Users/w/Documents/知识库/`，GitHub `19081509-bot/Knowledge`
+
+## AI 分工矩阵 🧠（2026-08-09 更新）
+
+### 🦐 虾癫癫（OpenClaw）— 编排中枢 + 管家
+**职责**
+- AI 编排中枢，调度所有 AI 协作
+- Obsidian 知识库管家：清洗、归档、分类、提炼
+- 巡检执行、Git 同步
+- 微信指令执行（发消息、发文件、语音通话）
+- 规则文件维护（`_ai/MEMORY.md`、`MEMORY.md`、`HEARTBEAT.md` 等）
+
+**模型**: OpenClaw 主会话（当前 DeepSeek V4 Flash）
+
+### 💻 Codex CLI (桌面版虾癫癫) — 专业知识（定向井/钻井工程）
+**职责**
+- 钻井工程专业知识整理：定向井（Compass/Landmark、Navigator）、钻井工具、钻机、泥浆、录井等
+- 专业知识文档、PDF、PPT、Word 资料搜索与整理
+- 看图分析（需切换视觉模型时）
+- 专业知识深度问答
+
+**模型**: DeepSeek V4 Flash（文本）；手动切换视觉模型看图片
+
+### 🔧 Codex++ — 专业知识（通用/辅助）
+**职责**
+- 与 Codex CLI 配合，承接专业知识相关任务
+- 端口 57321
+
+### 🛠️ Claude Code — 配置修复工程师
+**职责**
+- 代码/配置修复：YAML、TOML 调试
+- 系统配置问题排查
+- 复杂的 shell 脚本和程序修复
+
+**连接**: relay-ai（端口 17645）
+
+### 📝 Claudian（Obsidian 侧边 AI）— Obsidian 内嵌助手
+**职责**
+- Obsidian 笔记内辅助（侧边栏直接交互）
+- 不涉及桌面 GUI 操作
+
+**连接**: relay-ai（端口 17645）
+
+### 🪟 Windows Codex Desktop（备用）— 专业知识（跨平台补充）
+**职责**
+- Windows 端专业知识搜索/整理（联网或本机文件）
+- 作为备选平台执行任务
+
+### 🫘 豆包（Doubao）— 百科知识剪藏入口
+**职责**
+- 百科类、通识类知识的主要来源
+- 通过 Web Clipper 剪藏到 `00_Inbox/`
+- 由虾癫癫清洗归档到 `AI对话存档/通用技术记录/`
+
+### 归档规则
+- 专业知识（钻井/定向/工具/泥浆等）→ `_ai/drilling/`
+- 百科通识/豆包内容 → `AI对话存档/通用技术记录/`
+- 系统调试/配置 → `AI对话存档/系统调试日志/`
+- Codex/Claude Code 相关排错 → 对应专项目录
 
 ## 硬性运行规范
 
