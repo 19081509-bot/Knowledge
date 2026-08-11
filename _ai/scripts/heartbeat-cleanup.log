@@ -153,3 +153,8 @@ error: please commit or stash them.
 [2026-08-12 06:05:05] 处理: 钻具扣型速查.md
 [2026-08-12 06:05:05]   → AI对话存档/通用技术记录/钻具扣型速查.md
 [2026-08-12 06:05:05] 已更新 MEMORY.md 摘要
+[2026-08-12 06:05:05] 已 stash 未暂存变更
+[2026-08-12 06:05:06] Git pull --rebase 仍失败: error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+[2026-08-12 06:05:06] Heartbeat 清洗完成，处理了 1 个文件
+[2026-08-12 06:05:06] ========================================
