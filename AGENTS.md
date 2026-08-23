@@ -135,3 +135,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - [Default AGENTS.md](/reference/AGENTS.default)
 - [Scheduled tasks vs heartbeat](/automation#scheduled-tasks-cron-vs-heartbeat)
 - [Heartbeat](/gateway/heartbeat)
+
+## Caveman 模式
+新会话启动后，AI 立即执行：
+/caveman ultra
