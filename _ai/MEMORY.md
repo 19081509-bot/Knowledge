@@ -79,6 +79,7 @@
 ### 内网穿透（Tailscale，2026-08-23 部署）
 - Windows `wd` 固定地址 **100.109.19.27**；Mac `hymacbook-pro` 固定地址 **100.83.233.122**
 - 从 Windows 连 Mac：`ssh w@100.83.233.122`（免密；屏幕共享/VNC 5900 已开）
+- Mac 连 Windows（2026-08-25 验证免密）：ssh administrator@100.109.19.27（Windows sshd 已装并自动运行；用户名是 administrator，不是 Tailscale 账号名）
 - Mac 防睡眠已配：`caffeinate -d -s` + 登录自启 `com.local.keepawake`（出差时 Mac 不会睡死）
 - 看组网：`tailscale status`；换网络后显示 offline 就等半分钟或重连
 - 国内连 Tailscale 登录/握手不稳时，走机场代理 `HTTPS_PROXY=http://127.0.0.1:7897`
