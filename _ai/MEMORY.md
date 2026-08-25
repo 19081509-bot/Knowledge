@@ -5,8 +5,9 @@
 
 ## 运行环境
 
-- **设备**: Mac (192.168.2.67) + Windows (192.168.2.166)
+- **设备**: Mac `hymacbook-pro` (Tailscale 100.83.233.122) + Windows `wd` (Tailscale 100.109.19.27)；局域网 IP 不固定，跨网段一律用 Tailscale 100.x 地址
 - **AI 工具栈**: OpenClaw (虾癫癫) + Codex CLI (虾癫癫) + Codex++ + Claude Code + Claudian + Windows Codex
+- **Obsidian 侧边 AI**: Claudian（非 OpenClaw）
 - **API 供应商**: 硅基流动（DeepSeek 文本）
 - **知识库**: Obsidian `/Users/w/Documents/知识库/`，GitHub `19081509-bot/Knowledge`
 
@@ -74,6 +75,14 @@
 1. Clash Verge **永久关闭 TUN 模式**，用系统代理（127.0.0.1:7897）
 2. 运行 codex-relay 时必须完全退出 Clash Verge
 3. 局域网 IP（192.168.x.x/10.x.x.x）直连，不走代理
+
+### 内网穿透（Tailscale，2026-08-23 部署）
+- Windows `wd` 固定地址 **100.109.19.27**；Mac `hymacbook-pro` 固定地址 **100.83.233.122**
+- 从 Windows 连 Mac：`ssh w@100.83.233.122`（免密；屏幕共享/VNC 5900 已开）
+- Mac 防睡眠已配：`caffeinate -d -s` + 登录自启 `com.local.keepawake`（出差时 Mac 不会睡死）
+- 看组网：`tailscale status`；换网络后显示 offline 就等半分钟或重连
+- 国内连 Tailscale 登录/握手不稳时，走机场代理 `HTTPS_PROXY=http://127.0.0.1:7897`
+- 同步借道（2026-08-25 验证）：Mac 的 Clash 节点失效/直连 GitHub 不稳时，Windows 侧起反向隧道 `ssh -o BatchMode=yes -N -R 17897:127.0.0.1:7897 w@100.83.233.122`，Mac 的 git 用 `-c http.proxy=http://127.0.0.1:17897 -c https.proxy=http://127.0.0.1:17897` fetch/pull/push 即可同步（前提：Windows 在线且 Windows Clash 7897 在工作）
 
 ### 端口
 | 端口 | 服务 | 说明 |
