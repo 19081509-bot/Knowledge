@@ -162,3 +162,10 @@
 #### 微信换账号
 - 脚本: `python3 ~/scripts/wechat_switch_account.py`
 - 完整文档: `~/.openclaw/workspace/WEIXIN_GUI.md`
+
+## 内网穿透（Tailscale）
+
+- 2026-08-23 部署：Windows + Mac 两台都装 Tailscale 并同账号登录，跨网段/出差都能互连
+- 固定地址：Windows `wd` = 100.109.19.27；Mac `hymacbook-pro` = 100.83.233.122
+- 常用命令：`ssh w@100.83.233.122`（从 Windows 远程进 Mac）；`tailscale status` 查看
+- 细节见 `_ai/MEMORY.md` 网络节

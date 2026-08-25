@@ -1,3 +1,28 @@
+# AGENTS.md — 虾癫癫知识库
+
+## ⚠️ 紧急：新会话启动后 AI 必须立即执行
+
+本机使用 DeepSeek V4，无自动记忆恢复机制。请严格按以下步骤操作：
+
+【第一步】恢复上次会话上下文
+```
+powershell -ExecutionPolicy Bypass "C:\Users\Administrator\知识库\_ai\scripts\session-restore.ps1"
+```
+
+【第二步】读取完整记忆文件
+```
+Get-Content "C:\Users\Administrator\知识库\_ai\session-context.md" -Raw -Encoding UTF8
+```
+
+【第三步】继续执行上次待办
+【第四步】按需读取 _ai/MEMORY.md、MEMORY.md、memory/ 最近日志
+
+---
+
+[下面的内容是原有的知识库配置，已自动保留]
+
+---
+
 # AGENTS.md - Your Workspace
 
 This folder is home. Treat it that way.
@@ -136,6 +161,32 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - [Scheduled tasks vs heartbeat](/automation#scheduled-tasks-cron-vs-heartbeat)
 - [Heartbeat](/gateway/heartbeat)
 
+
 ## Caveman 模式
 新会话启动后，AI 立即执行：
 /caveman ultra
+
+## Windows 本机会话（DeepSeek 模型）
+
+⚠️ **本机使用 DeepSeek V4 纯文本模型（非 OpenAI 原生）。对话可能因超限/崩溃中断。**
+
+### 崩溃恢复流程
+新会话启动后，按此顺序读取恢复上下文：
+
+1. **`_ai/session-context.md`** — 当前任务上下文（首要读取）
+2. **`_ai/MEMORY.md`** — 全局规则与分工
+3. **`MEMORY.md`** — 虾癫癫长期记忆
+4. **`memory/YYYY-MM-DD.md`** — 最近每日日志
+
+### 记忆持久化
+- **保存当前状态** → powershell -ExecutionPolicy Bypass ".\_ai\scripts\session-save.ps1"
+- **崩溃后恢复** → powershell -ExecutionPolicy Bypass ".\_ai\scripts\session-restore.ps1"
+- **无 Mac 时** → 只读写本机 `C:\Users\Administrator\知识库\`
+- **有 Obsidian 时** → 同步 `session-context.md` 到 Mac 知识库
+
+### 本机环境速查
+- Mac SSH: `ssh w@100.83.233.122`（免密；同网段也可直接 `ssh w@192.168.8.21`）
+- Mac 知识库: `/Users/w/Documents/知识库/`
+- 模型: DeepSeek V4 纯文本，1M 上下文，无沙箱限制
+- 工作目录: 当前 Codex 会话目录
+>>>>>>> Stashed changes
