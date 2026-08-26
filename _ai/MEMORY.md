@@ -78,6 +78,15 @@
 
 
 ### 安全区 / 防拦截（2026-08-26 配置）
+
+**统一安全区大目录** = `C:\Users\Administrator\SafeZone`（整个目录已在 Defender 排除）
+- Hermes 物理数据已搬入 `SafeZone\hermes`；原路径 `%LOCALAPPDATA%\hermes` 是 Junction（透明指向，Hermes 无感知，自己照常建文件夹）
+- Codex 工作区 `Documents\Codex` 也在排除内
+- 停/启 Hermes: 停止用 Stop-Process -Name Hermes；启动用 `D:\桌面\Hermes.lnk`
+- 受控文件夹白名单已含 python/node/pwsh；当前用户 PowerShell = Bypass
+- 防火墙: Codex++/Hermes/python/Tailscale 均已放行；出站默认允许
+- 若再遇"阻止写文件"→ 检查受控文件夹白名单，把对应 exe 加进 `ControlledFolderAccessAllowedApplications`
+
 - 安全区目录 = C:\Users\Administrator\Documents\Codex（已在 Defender 排除 + 受控文件夹白名单 python/node/pwsh）
 - 另已排除: %LOCALAPPDATA%\hermes、Codex++、D:/Navigator、E:/F: 常用盘
 - PowerShell 已放开: 当前用户 ExecutionPolicy = Bypass（写本机脚本直接跑，不再被弹窗拦）
