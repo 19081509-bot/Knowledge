@@ -77,6 +77,14 @@
 3. 局域网 IP（192.168.x.x/10.x.x.x）直连，不走代理
 
 
+### Hermes 布局定案（2026-08-27 修复后，勿再迁移）
+- Hermes 出厂=**扁平**：`%LOCALAPPDATA%\hermes\` 根下直接是 hermes-agent/、kanban.db、config.yaml、bin/ 等
+- ⚠️ 08-26~08-27 曾两度迁走（SafeZone→Documents\Codex），嵌套后桌面端找不到扁平后端 → 开机自启必挂（kanban unable to open database file → backend exit 1）
+- 已复原：扁平布局恢复、kanban.db 回根、桌面快捷方式 D:\桌面\Hermes.lnk 重建（旧外壳备份在 %LOCALAPPDATA%\hermes.mig-backup 可删）
+- 修复后状态：后端 READY（port 58xxx），GUI 5 进程正常
+- 铁律：Hermes 只能待在 `%LOCALAPPDATA%\hermes` 出厂扁平位，**不要再搬、不要建 junction**
+- 主安全区 = `C:\Users\Administrator\Documents\Codex`（放 Codex 会话/OCR 脚本/Scripts；Hermes 不在其中）
+
 ### 安全区 / 防拦截（2026-08-27 定稿）
 
 **主安全区** = `C:\Users\Administrator\Documents\Codex`（统一安全区大目录；用户指定，全目录已在 Defender 排除）
