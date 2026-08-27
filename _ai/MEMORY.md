@@ -151,6 +151,13 @@
 2. 剪藏草稿先放 `00_Inbox/`，由 AI 清洗后归档
 3. 少于 3 轮无技术价值的对话不归档
 
+
+### 扫描 PDF → 文本（2026-08-27 配置）
+- Mac 最快路线：系统原生 Vision OCR，已搭好 /Users/w/bin/ocr（swift，零安装，中英准）
+  - 用法：/Users/w/bin/ocr 文件.pdf（默认中英；可选第二参数指定语言）
+- Windows 路线：PDF24（已装，图形化 OCR）；tesseract/OCRmyPDF 待配（方案 B）
+- poppler（pdfinfo/pdftotext）在 Windows 本机可用，处理文字型 PDF 抽文本
+- 纯文字型 PDF（可复制）无需 OCR，直接 pdftotext/LibreOffice 导出
 ### 同步规则
 1. Obsidian Git 插件每 5 分钟自动提交推送
 2. crontab 每小时整点兜底执行 `/Users/w/obsidian-git-sync.sh`
