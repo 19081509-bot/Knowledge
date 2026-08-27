@@ -77,11 +77,12 @@
 3. 局域网 IP（192.168.x.x/10.x.x.x）直连，不走代理
 
 
-### 安全区 / 防拦截（2026-08-26 配置）
+### 安全区 / 防拦截（2026-08-27 定稿）
 
-**统一安全区大目录** = `C:\Users\Administrator\SafeZone`（整个目录已在 Defender 排除）
-- Hermes 物理数据已搬入 `SafeZone\hermes`；原路径 `%LOCALAPPDATA%\hermes` 是 Junction（透明指向，Hermes 无感知，自己照常建文件夹）
-- Codex 工作区 `Documents\Codex` 也在排除内
+**主安全区** = `C:\Users\Administrator\Documents\Codex`（统一安全区大目录；用户指定，全目录已在 Defender 排除）
+- Hermes 物理数据在 `Documents\Codex\hermes`；原路径 `%LOCALAPPDATA%\hermes` 是 Junction（透明指向）
+- OCR 工具：`Documents\Codex\Scripts\win-ocr.py`（RapidOCR 本地中英识别）
+- 2026-08-26 曾暂用 `SafeZone`，2026-08-27 已并入主安全区
 - 停/启 Hermes: 停止用 Stop-Process -Name Hermes；启动用 `D:\桌面\Hermes.lnk`
 - 受控文件夹白名单已含 python/node/pwsh；当前用户 PowerShell = Bypass
 - 防火墙: Codex++/Hermes/python/Tailscale 均已放行；出站默认允许
