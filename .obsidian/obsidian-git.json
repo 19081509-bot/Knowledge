@@ -1,0 +1,17 @@
+{
+  "autoSaveInterval": 30,
+  "autoPushInterval": 10,
+  "autoPullInterval": 10,
+  "autoPush": true,
+  "autoPull": true,
+  "pullBeforePush": true,
+  "syncMethod": "rebase",
+  "disablePush": false,
+  "disablePull": false,
+  "respectGitIgnore": true,
+  "showStatusBar": true,
+  "gitLog": {
+    "showCurrentBranch": true,
+    "dateFormat": "YYYY-MM-DD HH:mm"
+  }
+}
