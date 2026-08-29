@@ -82,7 +82,7 @@
 - ⚠️ 08-26~08-27 曾两度迁走（SafeZone→Documents\Codex），嵌套后桌面端找不到扁平后端 → 开机自启必挂（kanban unable to open database file → backend exit 1）
 - 已复原：扁平布局恢复、kanban.db 回根、桌面快捷方式 D:\桌面\Hermes.lnk 重建（旧外壳备份在 %LOCALAPPDATA%\hermes.mig-backup 可删）
 - 修复后状态：后端 READY（port 58xxx），GUI 5 进程正常
-- 铁律：Hermes 只能待在 `%LOCALAPPDATA%\hermes` 出厂扁平位，**不要再搬、不要建 junction**
+- 铁律：Hermes 只能待在 `%LOCALAPPDATA%\hermes` 出厂扁平位，**不要再搬、不要建 junction**、桌面快捷方式 `D:\桌面\Hermes.lnk` 必须指向真实路径 `C:\Users\Administrator\AppData\Local\hermes\hermes-agent\apps\desktop\release\win-unpacked\Hermes.exe`（若变成 `Packages\OpenAI.Codex...\LocalCache\...` 是异常，双击会打不开，需重建）
 - 主安全区 = `C:\Users\Administrator\Documents\Codex`（放 Codex 会话/OCR 脚本/Scripts；Hermes 不在其中）
 
 ### 安全区 / 防拦截（2026-08-27 定稿）
