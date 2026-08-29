@@ -37,4 +37,4 @@ launchctl list | grep -iE "codex-relay|relay-ai"
 - [[跨Agent记忆持久化规则]]
 - [[codex-relay踩坑]]
 
-#codex-relay #故障 #launchd #排障
+[[codex-relay]] [[故障]] [[launchd]] [[排障]]

@@ -143,10 +143,10 @@
 ```
 
 #### 3. 自动标签
-- codex-relay 故障 → `#codex-relay #故障`
-- Clash 代理配置 → `#ClashVerge #代理排错`
-- OpenClaw 报错 → `#OpenClaw #自动化故障`
-- PicGo 图床 → `#PicGo #图床`
+- codex-relay 故障 → `#codex-relay [[故障]]`
+- Clash 代理配置 → `#ClashVerge [[代理排错]]`
+- OpenClaw 报错 → `#OpenClaw [[自动化故障]]`
+- PicGo 图床 → `#PicGo [[图床]]`
 - Mac 调试 → `#Mac`
 
 #### 4. 分类目录

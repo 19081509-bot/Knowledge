@@ -74,7 +74,7 @@
 ### 笔记规则
 1. 所有 AI 对话存档必须套用 `Templates/AI对话模板.md`
 2. 剪藏/草稿统一放入 `00_Inbox/`，由 AI 自动分类
-3. 标签体系：#codex-relay #ClashVerge #OpenClaw #Mac #Windows #排错
+3. 标签体系：#codex-relay [[ClashVerge]] [[OpenClaw]] [[Mac]] [[Windows]] [[排错]]
 
 ### 同步规则
 1. Git 自动同步由 crontab 每小时整点触发
